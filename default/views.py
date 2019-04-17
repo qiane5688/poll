@@ -15,7 +15,7 @@ class PollDetail(DetailView):
 
     def get_context_data(self, **kwargs):
         cxt = super().get_context_data(**kwargs)
-        ctx['options'] = Option.objects.filter(poll_id=self.kwargs['pk']) 
+        cxt['options'] = Option.objects.filter(poll_id=self.kwargs['pk']) 
         return cxt
 
 class PollVote(RedirectView): 
